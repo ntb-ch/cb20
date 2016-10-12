@@ -130,9 +130,9 @@ set_location_assignment PIN_N2 -to gpio_block_1_conduit_end_export[3]
 set_location_assignment PIN_N1 -to gpio_block_1_conduit_end_export[2]
 set_location_assignment PIN_P2 -to gpio_block_1_conduit_end_export[1]
 set_location_assignment PIN_P1 -to gpio_block_1_conduit_end_export[0]
-set_location_assignment PIN_A6 -to pwm_interface_0_conduit_end_export[2]
-set_location_assignment PIN_A5 -to pwm_interface_0_conduit_end_export[1]
-set_location_assignment PIN_B5 -to pwm_interface_0_conduit_end_export[0]
+set_location_assignment PIN_A5 -to pwm_interface_0_conduit_end_export[2]
+set_location_assignment PIN_B5 -to pwm_interface_0_conduit_end_export[1]
+set_location_assignment PIN_A4 -to pwm_interface_0_conduit_end_export[0]
 set_location_assignment PIN_A15 -to reset_reset_n
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 set_global_assignment -name GENERATE_RBF_FILE ON
@@ -147,4 +147,5 @@ set_location_assignment PIN_B3 -to mpu9250_0_conduit_end_isl_sdo
 set_location_assignment PIN_A3 -to mpu9250_0_conduit_end_osl_sclk
 set_location_assignment PIN_A2 -to mpu9250_0_conduit_end_osl_sdi
 set_location_assignment PIN_B4 -to mpu9250_0_conduit_end_oslv_cs_n
+set_location_assignment PIN_A6 -to pwm_interface_0_conduit_end_export[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

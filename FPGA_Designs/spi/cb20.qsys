@@ -28,14 +28,6 @@
          type = "int";
       }
    }
-   element dacad5668_0.avalon_slave
-   {
-      datum baseAddress
-      {
-         value = "512";
-         type = "String";
-      }
-   }
    element info_device_0.avalon_slave
    {
       datum baseAddress
@@ -44,11 +36,19 @@
          type = "String";
       }
    }
-   element mpu9250_0.avalon_slave_0
+   element dacad5668_0.avalon_slave
    {
       datum baseAddress
       {
-         value = "256";
+         value = "512";
+         type = "String";
+      }
+   }
+   element gpio_block_1.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "768";
          type = "String";
       }
    }
@@ -60,11 +60,11 @@
          type = "String";
       }
    }
-   element gpio_block_1.avalon_slave_0
+   element mpu9250_0.avalon_slave_0
    {
       datum baseAddress
       {
-         value = "768";
+         value = "256";
          type = "String";
       }
    }
@@ -171,7 +171,7 @@
  <parameter name="projectName" value="cb20.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1476165961140" />
+ <parameter name="timeStamp" value="1476259795226" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
@@ -424,7 +424,7 @@
    version="0.1.2"
    enabled="1"
    name="pwm_interface_0">
-  <parameter name="number_of_pwms" value="3" />
+  <parameter name="number_of_pwms" value="4" />
   <parameter name="base_clk" value="200000000" />
   <parameter name="unique_id" value="309379073" />
   <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="200000000" />
