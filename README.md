@@ -14,5 +14,5 @@ To build the sources, follow these steps:
  1. run make.sh script
  1. copy the executable to your target device
  
- ## Electronics
- Contains the Schematic as a PDF file and the Altium Designer files. Also the Pin Mapping for the FPGA is included and the pin layout on the PCB.
+## Electronics
+Contains the Schematic as a PDF file and the Altium Designer files. Also the Pin Mapping for the FPGA is included and the pin layout on the PCB.
