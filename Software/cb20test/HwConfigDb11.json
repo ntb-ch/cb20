@@ -1,0 +1,160 @@
+{
+	"device0": {
+		"library": "libflinkeeros.so",
+		"devHandle": "/dev/flink0",
+		"subdevice5": {
+			"type": "DigIn",
+			"channel0": {
+				"type": "DigOut",
+				"signalId": "enableDrv"
+			},
+			"channel1": {
+				"signalId": "readySig1"
+			},
+			"channel2": {
+				"signalId": "readySig2"
+			},
+			"channel3": {
+				"signalId": "readySig3"
+			},
+			"channel4": {
+				"signalId": "readySig4"
+			}
+		},
+		"subdevice2": {
+			"type": "AnalogOut",
+			"channel0": {
+				"signalId": "dac1",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.923 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel1": {
+				"signalId": "dac2",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.908, "maxOut": 	9.796 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel2": {
+				"signalId": "dac3",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.910 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel3": {
+				"signalId": "dac4",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.710, "maxOut": 	9.775 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			}
+		},
+		"subdevice1": {
+			"type": "Fqd",
+			"channel0": {
+				"signalId": "enc1",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel1": {
+				"signalId": "enc2",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel2": {
+				"signalId": "enc3",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel3": {
+				"signalId": "enc4",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			}
+		},
+		"subdevice4": {
+			"type": "DigOut",
+			"channel0": {
+				"signalId": "io0"
+			},
+			"channel1": {
+				"signalId": "io1"
+			},
+			"channel2": {
+				"signalId": "io2"
+			},
+			"channel3": {
+				"signalId": "io3"
+			},
+			"channel4": {
+				"signalId": "io4"
+			},
+			"channel5": {
+				"signalId": "io5"
+			}
+		},
+		"subdevice0": {
+			"type": "Pwm",
+			"channel0": {
+				"signalId": "pwm0"
+			},
+			"channel1": {
+				"signalId": "pwm1"
+			},
+			"channel2": {
+				"signalId": "pwm2"
+			},
+			"channel3": {
+				"signalId": "pwm3"
+			},
+		}
+	}
+}
+

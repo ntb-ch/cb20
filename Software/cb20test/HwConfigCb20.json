@@ -1,0 +1,281 @@
+{
+	"device0": {
+		"library": "libflinkeeros.so",
+		"devHandle": "/dev/flink0",
+		"subdevice0": {
+			"type": "Pwm",
+			"channel0": {
+				"signalId": "pwm1"
+			},
+			"channel1": {
+				"signalId": "pwm2"
+			},
+			"channel2": {
+				"signalId": "pwm3"
+			},
+			"channel3": {
+				"signalId": "pwm4"
+			},
+			"channel4": {
+				"signalId": "pwm5"
+			},
+			"channel5": {
+				"signalId": "pwm6"
+			},
+			"channel6": {
+				"signalId": "pwm7"
+			},
+			"channel7": {
+				"signalId": "pwm8"
+			}
+		},
+		"subdevice1": {
+			"type": "Fqd",
+			"channel0": {
+				"signalId": "enc1",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel1": {
+				"signalId": "enc2",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel2": {
+				"signalId": "enc3",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel3": {
+				"signalId": "enc4",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel4": {
+				"signalId": "enc5",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel5": {
+				"signalId": "enc6",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel6": {
+				"signalId": "enc7",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel7": {
+				"signalId": "enc8",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			}
+		},
+		"subdevice2": {
+			"type": "AnalogOut",
+			"channel0": {
+				"signalId": "dac1",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.923 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel1": {
+				"signalId": "dac2",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.908, "maxOut": 	9.796 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel2": {
+				"signalId": "dac3",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.910 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel3": {
+				"signalId": "dac4",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.710, "maxOut": 	9.775 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel4": {
+				"signalId": "dac5",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.910 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel5": {
+				"signalId": "dac6",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.910 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel6": {
+				"signalId": "dac7",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.910 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			},
+			"channel7": {
+				"signalId": "dac8",
+				"scale": [ { "id" : "dac",
+								"minIn": 	2000, 	"maxIn": 	64000,
+								"minOut": 	-9.787, "maxOut": 	9.910 }
+					 ],
+				"range": [ { "id" : "dac",
+								"minIn":	0,  	"maxIn": 	65536,
+								"minOut":	-10.0,	"maxOut": 	10.0 }
+					 ],
+				"unit": "V"
+			}
+		},
+		"subdevice4": {
+			"type": "DigOut",
+			"channel0": {
+				"signalId": "io1"
+			},
+			"channel1": {
+				"signalId": "io2"
+			},
+			"channel2": {
+				"signalId": "io3"
+			},
+			"channel3": {
+				"signalId": "io4"
+			},
+			"channel4": {
+				"signalId": "io5"
+			},
+			"channel5": {
+				"signalId": "io6"
+			},
+			"channel6": {
+				"signalId": "io7"
+			},
+			"channel7": {
+				"signalId": "io8"
+			}
+		},
+		"subdevice5": {
+			"type": "DigOut",
+			"channel0": {
+				"signalId": "enableDrv"
+			},
+			"channel1": {
+				"signalId": "readySig1"
+			},
+			"channel2": {
+				"signalId": "readySig2"
+			},
+			"channel3": {
+				"signalId": "readySig3"
+			},
+			"channel4": {
+				"signalId": "readySig4"
+			},
+			"channel5": {
+				"signalId": "readySig5"
+			},
+			"channel6": {
+				"signalId": "readySig6"
+			},
+			"channel7": {
+				"signalId": "readySig7"
+			},
+			"channel8": {
+				"signalId": "readySig8"
+			}
+		}
+	}
+}
+
