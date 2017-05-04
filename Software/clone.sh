@@ -16,8 +16,9 @@ if [ ! -d "$flink_source_dir" ]; then
 	git clone https://github.com/flink-project/flinklib.git -o upstream --recursive "$flink_source_dir"
 fi
 
-#if [ ! -d "$cb20_source_dir" ]; then
-#	git clone https://github.com/ntb-ch/pathos.git -o upstream "$cb20_source_dir"
-#fi
+if [ ! -d "$flink_eeros_source_dir" ]; then
+	git clone https://github.com/eeros-project/flink-eeros.git -o upstream "$flink_eeros_source_dir"
+fi
+
 
 
