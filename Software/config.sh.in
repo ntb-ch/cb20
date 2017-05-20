@@ -1,6 +1,6 @@
 wd="$(pwd)"
 
-toolchain_file="$wd/arm-linux-gnueabihf.cmake"
+#toolchain_file="$wd/arm-linux-gnueabihf.cmake"
 install_dir="$wd/install-armhf"
 build_dir="$wd/build-armhf"
 
