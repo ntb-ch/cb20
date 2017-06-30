@@ -12,5 +12,8 @@ link_directories(${ADDITIONAL_LINK_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_executable(cb20Test Cb20Test.cpp)
-target_link_libraries(cb20Test eeros ${CMAKE_DL_LIBS} ucl pthread)
+target_link_libraries(cb20Test eeros ${CMAKE_DL_LIBS} ucl)
+
+add_executable(cb11Test Cb11Test.cpp)
+target_link_libraries(cb11Test eeros ${CMAKE_DL_LIBS} ucl)
 
