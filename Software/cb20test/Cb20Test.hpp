@@ -28,9 +28,9 @@ public:
 	SafetyLevel slSingle;
 };
 
-class MyMainSequence : public Sequence<> {
+class MyMainSequence : public Sequence {
 public:
-	MyMainSequence(Sequencer* sequencer) : Sequence<void>("main", sequencer) {
+	MyMainSequence(Sequencer& sequencer) : Sequence("main", sequencer) {
 		hal.callOutputFeature(&pwm1, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm2, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm3, "setPwmFrequency", 100.0);
@@ -47,11 +47,10 @@ public:
 		dac6.set(0);
 		dac7.set(0);
 		dac8.set(0);
+		setNonBlocking();
 	}
 	
-	virtual bool checkPreCondition() {return true;}
-	virtual void run() {
-		log.trace() << "[ Main Sequence Started ]";
+	int action() {
 		int cnt = 0;
 		pwm1.set(0.1);
 		pwm2.set(0.2);
@@ -62,7 +61,7 @@ public:
 		pwm7.set(0.7);
 		pwm8.set(0.8);
 		
-		for(cnt = 0; (cnt < 1000000) && (!isTerminating()); cnt++){
+		for(cnt = 0; (cnt < 1000000); cnt++){
 			if(cnt%10 == 0){
 				// GPIO
 				io1.set(!io1.get());
@@ -113,11 +112,8 @@ public:
 			usleep(10000);
 		}
 	}
-
-	virtual void exit() {log.info() << "[ Exit Main Sequence ]";}
 	
 private:
-	inline bool isTerminating() {return sequencer->getState() == state::terminating;}
 	HAL& hal = HAL::instance();
 	eeros::hal::Output<bool>& io1 = *hal.getLogicOutput("io1");
 	eeros::hal::Output<bool>& io2 = *hal.getLogicOutput("io2");

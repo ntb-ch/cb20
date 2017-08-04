@@ -27,25 +27,17 @@ int main(int argc, char **argv){
 	SafetySystem safetySystem(safetyProperties, dt);
 	
 	// Sequencer
-	Sequencer sequencer;
-	MyMainSequence mainSequence(&sequencer);
-	sequencer.start(&mainSequence);
+	Sequencer sequencer = Sequencer::instance();
+	MyMainSequence mainSequence(sequencer);
+	sequencer.addMainSequence(&mainSequence);
 	
 	// Set executor & create safety system
 	auto &executor = Executor::instance();
 	executor.setMainTask(safetySystem);
 	executor.run();
 	
-	sequencer.shutdown();
-	usleep(3);
-	if(sequencer.getState()!=state::terminated) {
-		sequencer.abort();
-	}
-// 	while(sequencer.getState()!=state::terminated){
-// 		usleep(100000);
-// 		std::cout << ".";
-// 	}
-	
+	mainSequence.join();
+
 	log.info() << "Test end...";
 		
 	return 0;
