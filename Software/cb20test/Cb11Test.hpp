@@ -30,7 +30,9 @@ public:
 
 class MyMainSequence : public Sequence {
 public:
-	MyMainSequence(Sequencer& sequencer) : Sequence("main", sequencer) {
+	MyMainSequence(Sequencer& sequencer) : Sequence("main", sequencer), enc11("enc1"), td("Main time domain", 0.01, true) {
+		td.addBlock(enc11);
+		eeros::Executor::instance().add(td);
 		hal.callOutputFeature(&pwm1, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm2, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm3, "setPwmFrequency", 100.0);
@@ -70,8 +72,9 @@ public:
 // 				readySig2.set(!readySig2.get());
 			}
 			if(cnt%100 == 0){
-				log.info() << enc1.get() << "\t" << enc2.get() << "\t"
-				<< enc3.get() << "\t" << enc4.get();
+// 				log.info() << enc1.get() << "\t" << enc2.get() << "\t"
+// 				<< enc3.get() << "\t" << enc4.get();
+				log.info() << enc11.getOut().getSignal();
 			}
 			
 // 			if((dac1val+=0.5) > 10.0) dac1val = -10.0;
@@ -110,7 +113,7 @@ private:
 	eeros::hal::Input<bool>& readySig2 = *hal.getLogicInput("readySig2");
 	eeros::hal::Input<bool>& readySig3 = *hal.getLogicInput("readySig3");
 	eeros::hal::Input<bool>& readySig4 = *hal.getLogicInput("readySig4");
-	eeros::hal::Input<double>& enc1 = *hal.getScalableInput("enc1");
+// 	eeros::hal::Input<double>& enc1 = *hal.getScalableInput("enc1");
 	eeros::hal::Input<double>& enc2 = *hal.getScalableInput("enc2");
 	eeros::hal::Input<double>& enc3 = *hal.getScalableInput("enc3");
 	eeros::hal::Input<double>& enc4 = *hal.getScalableInput("enc4");
@@ -118,6 +121,8 @@ private:
 	double dac2val = 0.0;
 	double dac3val = 0.0;
 	double dac4val = 0.0;
+	eeros::control::PeripheralInput<> enc11;
+	eeros::control::TimeDomain td;
 };
 
 #endif // CB11_TEST_HPP_

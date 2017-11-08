@@ -29,14 +29,15 @@ int main(int argc, char **argv){
 	// Sequencer
 	Sequencer sequencer = Sequencer::instance();
 	MyMainSequence mainSequence(sequencer);
-	sequencer.addMainSequence(&mainSequence);
+	sequencer.addSequence(mainSequence);
+	mainSequence.start();
 	
 	// Set executor & create safety system
 	auto &executor = Executor::instance();
 	executor.setMainTask(safetySystem);
 	executor.run();
 	
-	mainSequence.join();
+	sequencer.join();
 
 	log.info() << "Test end...";
 		

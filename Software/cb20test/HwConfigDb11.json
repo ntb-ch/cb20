@@ -2,23 +2,66 @@
 	"device0": {
 		"library": "libflinkeeros.so",
 		"devHandle": "/dev/flink0",
-		"subdevice5": {
-			"type": "DigIn",
+		"subdevice0": {
+			"type": "Pwm",
 			"channel0": {
-				"type": "DigOut",
-				"signalId": "enableDrv"
+				"signalId": "pwm1"
 			},
 			"channel1": {
-				"signalId": "readySig1"
+				"signalId": "pwm2"
 			},
 			"channel2": {
-				"signalId": "readySig2"
+				"signalId": "pwm3"
 			},
 			"channel3": {
-				"signalId": "readySig3"
+				"signalId": "pwm4"
 			},
-			"channel4": {
-				"signalId": "readySig4"
+		},
+		"subdevice1": {
+			"type": "Fqd",
+			"channel0": {
+				"signalId": "enc1",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel1": {
+				"signalId": "enc2",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel2": {
+				"signalId": "enc3",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 8192 }
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
+			},
+			"channel3": {
+				"signalId": "enc4",
+				"scale": [ { "id" : "enc",
+								"minIn": 	0, "maxIn": 6.28318530718,
+								"minOut":	0, "maxOut": 26624 } 
+					 ],
+				"range": [ { "id" : "enc",
+								"noLimit": 	true }
+					 ],
+				"unit": "rad"
 			}
 		},
 		"subdevice2": {
@@ -72,51 +115,23 @@
 				"unit": "V"
 			}
 		},
-		"subdevice3": {
-			"type": "Fqd",
+		"subdevice5": {
+			"type": "DigIn",
 			"channel0": {
-				"signalId": "enc1",
-				"scale": [ { "id" : "enc",
-								"minIn": 	0, "maxIn": 6.28318530718,
-								"minOut":	0, "maxOut": 8192 }
-					 ],
-				"range": [ { "id" : "enc",
-								"noLimit": 	true }
-					 ],
-				"unit": "rad"
+				"type": "DigOut",
+				"signalId": "enableDrv"
 			},
 			"channel1": {
-				"signalId": "enc2",
-				"scale": [ { "id" : "enc",
-								"minIn": 	0, "maxIn": 6.28318530718,
-								"minOut":	0, "maxOut": 8192 }
-					 ],
-				"range": [ { "id" : "enc",
-								"noLimit": 	true }
-					 ],
-				"unit": "rad"
+				"signalId": "readySig1"
 			},
 			"channel2": {
-				"signalId": "enc3",
-				"scale": [ { "id" : "enc",
-								"minIn": 	0, "maxIn": 6.28318530718,
-								"minOut":	0, "maxOut": 8192 }
-					 ],
-				"range": [ { "id" : "enc",
-								"noLimit": 	true }
-					 ],
-				"unit": "rad"
+				"signalId": "readySig2"
 			},
 			"channel3": {
-				"signalId": "enc4",
-				"scale": [ { "id" : "enc",
-								"minIn": 	0, "maxIn": 6.28318530718,
-								"minOut":	0, "maxOut": 26624 } 
-					 ],
-				"range": [ { "id" : "enc",
-								"noLimit": 	true }
-					 ],
-				"unit": "rad"
+				"signalId": "readySig3"
+			},
+			"channel4": {
+				"signalId": "readySig4"
 			}
 		},
 		"subdevice4": {
@@ -140,21 +155,6 @@
 				"signalId": "io6"
 			}
 		},
-		"subdevice0": {
-			"type": "Pwm",
-			"channel0": {
-				"signalId": "pwm1"
-			},
-			"channel1": {
-				"signalId": "pwm2"
-			},
-			"channel2": {
-				"signalId": "pwm3"
-			},
-			"channel3": {
-				"signalId": "pwm4"
-			},
-		}
 	}
 }
 
