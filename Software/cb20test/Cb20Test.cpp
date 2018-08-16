@@ -12,6 +12,10 @@ using namespace eeros::logger;
 using namespace eeros::safety;
 using namespace eeros::sequencer;
 
+void signalHandler(int signum) {
+	Sequencer::instance().abort();
+}
+
 int main(int argc, char **argv){
 	StreamLogWriter w(std::cout);
 	Logger::setDefaultWriter(&w);
@@ -37,7 +41,7 @@ int main(int argc, char **argv){
 	executor.setMainTask(safetySystem);
 	executor.run();
 	
-	sequencer.join();
+	sequencer.wait();
 	
 	log.info() << "Test end...";
 		

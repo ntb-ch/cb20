@@ -37,7 +37,7 @@ int main(int argc, char **argv){
 	executor.setMainTask(safetySystem);
 	executor.run();
 	
-	sequencer.join();
+	sequencer.wait();
 
 	log.info() << "Test end...";
 		

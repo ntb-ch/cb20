@@ -47,12 +47,11 @@ public:
 		dac6.set(0);
 		dac7.set(0);
 		dac8.set(0);
-		setNonBlocking();
 	}
 	
 	int action() {
 		int cnt = 0;
-		pwm1.set(0.1);
+		pwm1.set(0.1);	// check pwm duty cycles on P11, pins 3 through to 10
 		pwm2.set(0.2);
 		pwm3.set(0.3);
 		pwm4.set(0.4);
@@ -61,38 +60,38 @@ public:
 		pwm7.set(0.7);
 		pwm8.set(0.8);
 		
-		for(cnt = 0; (cnt < 1000000); cnt++){
+		while (Sequencer::running) {
 			if(cnt%10 == 0){
 				// GPIO
-				io1.set(!io1.get());
-				io4.set(!io4.get());
-				io7.set(!io7.get());
-				enableDrv.set(!enableDrv.get());
-				readySig3.set(!readySig3.get());
-				readySig6.set(!readySig6.get());
+				io1.set(!io1.get());	// check on P12, pin 3, must toggle with 5Hz
+				io4.set(!io4.get());	// check on P12, pin 6, must toggle with 5Hz
+				io7.set(!io7.get());	// check on P12, pin 9, must toggle with 5Hz
+				enableDrv.set(!enableDrv.get());	// check on P9, pin 3, must toggle with 5Hz
+				readySig3.set(!readySig3.get());	// check on P9, pin 7, must toggle with 5Hz
+				readySig6.set(!readySig6.get());	// check on P9, pin 10, must toggle with 5Hz
 			}
 			if(cnt%15 == 0){
-				io2.set(!io2.get());
-				io5.set(!io5.get());
-				io8.set(!io8.get());
-				readySig1.set(!readySig1.get());
-				readySig4.set(!readySig4.get());
-				readySig7.set(!readySig7.get());
+				io2.set(!io2.get());	// check on P12, pin 4, must toggle with 3.3Hz
+				io5.set(!io5.get());	// check on P12, pin 7, must toggle with 3.3Hz
+				io8.set(!io8.get());	// check on P12, pin 10, must toggle with 3.3Hz
+				readySig1.set(!readySig1.get());	// check on P9, pin 5, must toggle with 3.3Hz
+				readySig4.set(!readySig4.get());	// check on P9, pin 8, must toggle with 3.3Hz
+				readySig7.set(!readySig7.get());	// check on P9, pin 11, must toggle with 3.3Hz
 			}
 			if(cnt%20 == 0){
-				io3.set(!io3.get());
-				io6.set(!io6.get());
-				readySig2.set(!readySig2.get());
-				readySig5.set(!readySig5.get());
-				readySig8.set(!readySig8.get());
+				io3.set(!io3.get());	// check on P12, pin 5, must toggle with 2.5Hz
+				io6.set(!io6.get());	// check on P12, pin 8, must toggle with 2.5Hz
+				readySig2.set(!readySig2.get());	// check on P9, pin 6, must toggle with 2.5Hz
+				readySig5.set(!readySig5.get());	// check on P9, pin 9, must toggle with 2.5Hz
+				readySig8.set(!readySig8.get());	// check on P9, pin 12, must toggle with 2.5Hz
 			}
-			if(cnt%100 == 0){
+			if(cnt%100 == 0){	// connect encoders to P8
 				log.info() << enc1.get() << "\t" << enc2.get() << "\t"
 				<< enc3.get() << "\t" << enc4.get() << "\t" << enc5.get() << "\t" 
 				<< enc6.get() << "\t" << enc7.get() << "\t" << enc8.get();
 			}
 			
-			if((dac1val+=0.5) > 10.0) dac1val = -10.0;
+			if((dac1val+=0.5) > 10.0) dac1val = -10.0;	// check analog signals (ramp) on P10
 			dac1.set(dac1val);
 			if((dac2val+=1.0) > 10.0) dac2val = -10.0;
 			dac2.set(dac2val);
@@ -109,6 +108,7 @@ public:
 			if((dac8val+= 0.8) > 10.0) dac8val = -10.0;
 			dac8.set(dac8val);
 			
+			cnt++;
 			usleep(10000);
 		}
 	}

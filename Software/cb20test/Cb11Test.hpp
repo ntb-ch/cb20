@@ -30,9 +30,7 @@ public:
 
 class MyMainSequence : public Sequence {
 public:
-	MyMainSequence(Sequencer& sequencer) : Sequence("main", sequencer), enc11("enc1"), td("Main time domain", 0.01, true) {
-		td.addBlock(enc11);
-		eeros::Executor::instance().add(td);
+	MyMainSequence(Sequencer& sequencer) : Sequence("main", sequencer) {
 		hal.callOutputFeature(&pwm1, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm2, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm3, "setPwmFrequency", 100.0);
@@ -42,8 +40,6 @@ public:
 		dac3.set(0.1);
 		dac4.set(0.1);
 		enableDrv.set(true);
-		setNonBlocking();
-
 	}
 	
 	int action() {
@@ -53,39 +49,39 @@ public:
 		pwm3.set(0.3);
 		pwm4.set(0.4);
 		
-		for(cnt = 0; (cnt < 1000000); cnt++){
+		while (Sequencer::running) {
 			if(cnt%10 == 0){
 				// GPIO
 				io1.set(!io1.get());
 				io4.set(!io4.get());
-// 				readySig3.set(!readySig3.get());
+				readySig3.set(!readySig3.get());
 			}
 			if(cnt%15 == 0){
 				io2.set(!io2.get());
 				io5.set(!io5.get());
-// 				readySig1.set(!readySig1.get());
-// 				readySig4.set(!readySig4.get());
+				readySig1.set(!readySig1.get());
+				readySig4.set(!readySig4.get());
 			}
 			if(cnt%20 == 0){
 				io3.set(!io3.get());
 				io6.set(!io6.get());
-// 				readySig2.set(!readySig2.get());
+				readySig2.set(!readySig2.get());
 			}
 			if(cnt%100 == 0){
-// 				log.info() << enc1.get() << "\t" << enc2.get() << "\t"
-// 				<< enc3.get() << "\t" << enc4.get();
-				log.info() << enc11.getOut().getSignal();
+				log.info() << enc1.get() << "\t" << enc2.get() << "\t"
+				<< enc3.get() << "\t" << enc4.get();
 			}
 			
-// 			if((dac1val+=0.5) > 10.0) dac1val = -10.0;
-// 			dac1.set(dac1val);
-// 			if((dac2val+=1.0) > 10.0) dac2val = -10.0;
-// 			dac2.set(dac2val);
-// 			if((dac3val+=0.4) > 10.0) dac3val = -10.0;
-// 			dac3.set(dac3val);
-// 			if((dac4val+=0.8) > 10.0) dac4val = -10.0;
-// 			dac4.set(dac4val);
+			if((dac1val+=0.5) > 10.0) dac1val = -10.0;
+			dac1.set(dac1val);
+			if((dac2val+=1.0) > 10.0) dac2val = -10.0;
+			dac2.set(dac2val);
+			if((dac3val+=0.4) > 10.0) dac3val = -10.0;
+			dac3.set(dac3val);
+			if((dac4val+=0.8) > 10.0) dac4val = -10.0;
+			dac4.set(dac4val);
 			
+			cnt++;
 			usleep(10000);
 		}
 	}
@@ -109,11 +105,11 @@ private:
 	eeros::hal::Output<bool>& enableDrv = *hal.getLogicOutput("enableDrv");
 	// the ready signals are inputs when connected to drives
 	// for testing purposes we configure them as outputs 
-	eeros::hal::Input<bool>& readySig1 = *hal.getLogicInput("readySig1");
-	eeros::hal::Input<bool>& readySig2 = *hal.getLogicInput("readySig2");
-	eeros::hal::Input<bool>& readySig3 = *hal.getLogicInput("readySig3");
-	eeros::hal::Input<bool>& readySig4 = *hal.getLogicInput("readySig4");
-// 	eeros::hal::Input<double>& enc1 = *hal.getScalableInput("enc1");
+	eeros::hal::Output<bool>& readySig1 = *hal.getLogicOutput("readySig1");
+	eeros::hal::Output<bool>& readySig2 = *hal.getLogicOutput("readySig2");
+	eeros::hal::Output<bool>& readySig3 = *hal.getLogicOutput("readySig3");
+	eeros::hal::Output<bool>& readySig4 = *hal.getLogicOutput("readySig4");
+	eeros::hal::Input<double>& enc1 = *hal.getScalableInput("enc1");
 	eeros::hal::Input<double>& enc2 = *hal.getScalableInput("enc2");
 	eeros::hal::Input<double>& enc3 = *hal.getScalableInput("enc3");
 	eeros::hal::Input<double>& enc4 = *hal.getScalableInput("enc4");
@@ -121,8 +117,6 @@ private:
 	double dac2val = 0.0;
 	double dac3val = 0.0;
 	double dac4val = 0.0;
-	eeros::control::PeripheralInput<> enc11;
-	eeros::control::TimeDomain td;
 };
 
 #endif // CB11_TEST_HPP_
