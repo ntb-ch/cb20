@@ -1,6 +1,6 @@
 #!/bin/bash
 
-target="pathos@es140.ntb.ch:/tmp/"
+target=${target_username}@${target_IP_address}:${target_application_folder}
 list="deploy.txt"
 tmp=".tmp-deploy"
 
