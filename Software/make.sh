@@ -37,6 +37,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE=$toolchain_file \
       -DADDITIONAL_INCLUDE_DIRS="$install_dir/include" \
       -DADDITIONAL_LINK_DIRS="$install_dir/lib" \
       -DCMAKE_BUILD_TYPE=Release \
+      -DREQUIRED_EEROS_VERSION=$eeros_required_version \
       $flink_eeros_source_dir
 make
 make install
@@ -52,5 +53,4 @@ cmake	-DCMAKE_TOOLCHAIN_FILE=$toolchain_file \
 	$cb20test_source_dir
 make
 popd
-
 

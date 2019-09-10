@@ -1,7 +1,51 @@
+# cb20 project configuration file
+
+# This file contains all configuration variables
+# for the cross development toolchain.
+
+
 wd="$(pwd)"
 
-# important: you must use the same toolchain as the one used on the cb20
+
+# variables for clone.sh script (location and version of the sources)
+#------------------------------------------------------------------------------
+# The "github_address" variables specify, where git will clone the repositories
+# from. The "github_version" variables specify the git reference (tag, branch,
+# commit hash), which git will use to checkout the version.
+# The "required_version" variables specify the versions of the libraries.
+# CMake checks the required version and fails if it is not present.
+# This ensures version checks during building the libraries and application.
+# In general, nothing needs to be changed in this section
+# unless special versions are needed.
+
+
+eeros_github_address=https://github.com/eeros-project/eeros-framework.git
+eeros_github_version=v1.0.0
+eeros_required_version=1.0.0.0
+
+flinklib_github_address=https://github.com/flink-project/flinklib.git
+flinklib_github_version=master
+
+flink_eeros_github_address=https://github.com/eeros-project/flink-eeros.git
+flink_eeros_github_version=master
+
+
+
+
+
+# variables for make.sh script
+#------------------------------------------------------------------------------
+# The "toolchain_file" variable specifies the toolchain file, which CMake uses
+# to choose the right build tools.
+# important: you must use the same toolchain as the one used on the cb20.
+# All the "dir" variables specify the names for the folders.
+# In general, nothing needs to be changed in this section unless another
+# toolchain file must be used or the folder names do not
+# meet the project requirements.
+
+
 toolchain_file="~/Toolchains/arm-gcc53/host/usr/share/buildroot/toolchainfile.cmake"
+
 install_dir="$wd/install-armhf"
 build_dir="$wd/build-armhf"
 
@@ -16,4 +60,24 @@ flink_eeros_build_dir="$build_dir/flink-eeros"
 
 cb20test_source_dir="$wd/cb20test"
 cb20test_build_dir="$build_dir/cb20test"
+
+
+
+
+
+# variables for deploy.sh script
+#------------------------------------------------------------------------------
+# The "target_IP_address" variable specifies the IP address or hostname
+# of the target. The deploy script transmits the files to the target using scp.
+# The "target_username" variable specifies the user name, which is used by
+# scp when the files are transmitted. In general, it is not necessary to change
+# these values unless the network settings and/or the user name was changed on
+# the target.
+# The "target_application_folder" variable specifies the location on the
+# target, where the application will be copied to by scp.
+
+
+target_IP_address=es140.ntb.ch
+target_username=pathos
+target_application_folder=/tmp/
 
