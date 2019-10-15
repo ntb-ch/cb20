@@ -13,11 +13,5 @@ There are two standard FPGA designs in the repository:
 ## Software
 We use the board together with [EEROS Robotics Framework](https://github.com/eeros-project/eeros-framework) and [flink](https://github.com/flink-project).
 - Demo application: in this repository under Software/cb20test
-- Necessary scripts: in this repository under Software
-
-## Steps
- 1. clone this repository (cb20.git) and navigate into the Software folder
- 1. run clone.sh script
- 1. run make.sh script
- 1. copy the executable to your target device with deploy.sh script, change target address for your device, adapt deploy.txt if necessary
+- How to use, see [Get Started Using EEROS](https://wiki.eeros.org/getting_started/start)
  
