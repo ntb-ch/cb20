@@ -1,0 +1,89 @@
+set_global_assignment -entity "cb20" -library "cb20" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "cb20" -library "cb20" -name IP_TOOL_VERSION "13.0sp1"
+set_global_assignment -entity "cb20" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "cb20" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../cb20.sopcinfo"]
+set_instance_assignment -entity "cb20" -library "cb20" -name SLD_INFO "QSYS_NAME cb20 HAS_SOPCINFO 1 GENERATION_ID 1476259961"
+set_global_assignment -library "cb20" -name MISC_FILE [file join $::quartus(qip_path) "../../cb20.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "cb20" -name MISC_FILE [file join $::quartus(qip_path) "../../cb20.qsys"]
+
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_info_device_0_avalon_slave_translator.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_gpio_block_0_avalon_slave_0_translator.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_pwm_interface_0_avalon_slave_0_translator.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_width_adapter.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_width_adapter_001.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_gpio_block_0.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "cb20_gpio_block_1.vhd"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_width_adapter.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_address_alignment.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_uncompressor.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_arbitrator.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/cb20_rsp_xbar_mux.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/cb20_rsp_xbar_demux.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/cb20_cmd_xbar_demux.sv"]
+set_global_assignment -library "cb20" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "cb20" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "cb20" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/cb20_id_router.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/cb20_addr_router.sv"]
+set_global_assignment -library "cb20" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_agent.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
+set_global_assignment -library "cb20" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/mpu9250_interface.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/mpu9250.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/spi_master.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/flink_definitions.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/avalon_pwm_interface.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/adjustable_pwm.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/avalon_gpio_interface.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/avalon_fqd_counter_interface.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/fqd.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/dacad5668.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/avalon_dacad5668_interface.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/eim_slave_to_avalon_master.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/eim_slave.m.vhd"]
+set_global_assignment -library "cb20" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/info_device.m.vhd"]
+set_global_assignment -library "cb20" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/cb20_altpll_0.v"]
+
+set_global_assignment -entity "altera_merlin_width_adapter" -library "cb20" -name IP_TOOL_NAME "altera_merlin_width_adapter"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "cb20_rsp_xbar_mux" -library "cb20" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "cb20_rsp_xbar_mux" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "cb20_rsp_xbar_mux" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "cb20_rsp_xbar_demux" -library "cb20" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "cb20_rsp_xbar_demux" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "cb20_rsp_xbar_demux" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "cb20_cmd_xbar_demux" -library "cb20" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "cb20_cmd_xbar_demux" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "cb20_cmd_xbar_demux" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_reset_controller" -library "cb20" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_reset_controller" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "cb20_id_router" -library "cb20" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "cb20_id_router" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "cb20_id_router" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "cb20_addr_router" -library "cb20" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "cb20_addr_router" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "cb20_addr_router" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "cb20" -name IP_TOOL_NAME "altera_avalon_sc_fifo"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "cb20" -name IP_TOOL_NAME "altera_merlin_slave_agent"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_agent" -library "cb20" -name IP_TOOL_NAME "altera_merlin_master_agent"
+set_global_assignment -entity "altera_merlin_master_agent" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_agent" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "cb20" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_translator" -library "cb20" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "altera_merlin_master_translator" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_translator" -library "cb20" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "cb20_altpll_0" -library "cb20" -name IP_TOOL_NAME "altpll"
+set_global_assignment -entity "cb20_altpll_0" -library "cb20" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "cb20_altpll_0" -library "cb20" -name IP_TOOL_ENV "Qsys"
