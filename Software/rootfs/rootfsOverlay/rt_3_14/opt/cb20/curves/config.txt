@@ -1,3 +1,0 @@
-peepDirection = -1.0
-peepPosition = 1.04
-peepTime = 3.0
