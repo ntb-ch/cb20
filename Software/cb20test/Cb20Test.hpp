@@ -18,19 +18,18 @@ using namespace eeros::hal;
 
 const double dt = 0.001;
 
-class MySafetyProperties : public SafetyProperties {
+class TestSafetyProperties : public SafetyProperties {
 public:
-	MySafetyProperties() : slSingle("single level") {
+	TestSafetyProperties() : slSingle("single level") {
 		addLevel(slSingle);
 		setEntryLevel(slSingle);
 	}
-	virtual ~MySafetyProperties() { }
 	SafetyLevel slSingle;
 };
 
-class MyMainSequence : public Sequence {
+class MainSequence : public Sequence {
 public:
-	MyMainSequence(Sequencer& sequencer) : Sequence("main", sequencer) {
+	MainSequence(Sequencer& sequencer) : Sequence("main", sequencer) {
 		hal.callOutputFeature(&pwm1, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm2, "setPwmFrequency", 100.0);
 		hal.callOutputFeature(&pwm3, "setPwmFrequency", 100.0);

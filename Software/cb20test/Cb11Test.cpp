@@ -13,31 +13,29 @@ using namespace eeros::safety;
 using namespace eeros::sequencer;
 
 int main(int argc, char **argv){
-	StreamLogWriter w(std::cout);
-	Logger::setDefaultWriter(&w);
-	Logger log;
-	w.show();
+	Logger::setDefaultStreamLogger(std::cout);
+	Logger log = Logger::getLogger();
+	log.show();
 	
 	log.info() << "Cb11 Testing...";
 	  
 	HAL::instance().readConfigFromFile(&argc, argv);
 
 	// Create safety system
-	MySafetyProperties safetyProperties;
-	SafetySystem safetySystem(safetyProperties, dt);
+	TestSafetyProperties sp;
+	SafetySystem ss(sp, dt);
 	
 	// Sequencer
-	Sequencer sequencer = Sequencer::instance();
-	MyMainSequence mainSequence(sequencer);
-	sequencer.addSequence(mainSequence);
-	mainSequence.start();
+	auto& seq = Sequencer::instance();
+	MainSequence mainSequence(seq);
+	mainSequence();
 	
 	// Set executor & create safety system
 	auto &executor = Executor::instance();
-	executor.setMainTask(safetySystem);
+	executor.setMainTask(ss);
 	executor.run();
 	
-	sequencer.wait();
+	seq.wait();
 
 	log.info() << "Test end...";
 		
